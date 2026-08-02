@@ -814,6 +814,16 @@
   overflow: hidden;
   box-shadow: var(--shadow-soft);
 }
+
+/* Decorative arrow pointing to the photo — hidden on mobile (no room above the image) */
+.about__arrow {
+  display: none;
+}
+.about__arrow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .about__img img {
   width: 100%;
   height: auto;
@@ -839,6 +849,17 @@
     gap: 4.5rem;
   }
   .about__media { margin-bottom: 0; }
+
+  /* Show the decorative arrow, hovering above-left, pointing down at the photo */
+  .about__arrow {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: -300px;
+    left: 154px;
+    width: 350px;
+    pointer-events: none;
+  }
 }
 
 
@@ -952,7 +973,8 @@ a.info-card:hover {
   color: var(--ink);
 }
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   width: 100%;
   padding: 0.8rem 1rem;
   font-family: var(--font-body);
@@ -966,8 +988,23 @@ a.info-card:hover {
 .field textarea { resize: vertical; min-height: 120px; }
 .field input::placeholder,
 .field textarea::placeholder { color: #9aa2af; }
+
+/* Select: strip the native chrome and draw our own dropdown arrow */
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a515c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 1.1rem;
+}
+.field select:invalid { color: #9aa2af; } /* grey out the "Select a project type" placeholder */
+
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
@@ -983,4 +1020,111 @@ a.info-card:hover {
   .contact__card { grid-template-columns: 0.9fr 1.1fr; }
   .contact__info { padding: 2.75rem 2.25rem; }
   .contact__form { padding: 2.75rem 2.25rem; }
+}
+
+
+/* ==========================================================================
+   FOOTER
+   Mobile-first: stacked → 4 columns at 64em. Navy, on-brand.
+   ========================================================================== */
+.footer {
+  background-color: var(--navy);
+  color: rgba(255, 255, 255, 0.72);
+}
+.footer__inner {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: 3.5rem 2.5rem;
+}
+
+/* Brand */
+.footer__logo {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+.footer__logo span { color: var(--accent); }
+.footer__tagline {
+  margin-top: 0.9rem;
+  max-width: 24rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.footer__socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+}
+.footer__social {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.footer__social svg { width: 17px; height: 17px; fill: currentColor; }
+.footer__social:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Link columns */
+.footer__heading {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 1.1rem;
+}
+.footer__links {
+  display: grid;
+  gap: 0.65rem;
+}
+.footer__link {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+.footer__link:hover { color: var(--accent); }
+.footer__muted { font-size: 0.92rem; }
+
+/* Bottom bar */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+}
+.footer__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-block: 1.4rem;
+}
+.footer__credit a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+.footer__credit a:hover { color: var(--accent); }
+
+@media (min-width: 48em) {
+  .footer__inner {
+    grid-template-columns: 1.6fr 1fr 1.4fr;
+    gap: 3rem;
+  }
+  .footer__brand { grid-column: 1 / -1; } /* brand full-width row on tablet */
+}
+@media (min-width: 64em) {
+  .footer__inner {
+    grid-template-columns: 1.8fr 1fr 1.4fr 1.4fr;
+    gap: 3.5rem;
+    padding-block: 4.5rem 3rem;
+  }
+  .footer__brand { grid-column: auto; } /* brand becomes the first of 4 columns */
 }
