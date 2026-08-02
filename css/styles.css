@@ -416,6 +416,11 @@
   flex: 0 0 80%;          /* carousel: ~1 tile wide, next one peeks in */
   scroll-snap-align: start;
 }
+.gallery__item picture {
+  display: block;
+  width: 100%;
+  height: 100%; /* stretch the wrapper to the tile so object-fit: cover works */
+}
 .gallery__item img {
   width: 100%;
   height: 100%;
@@ -425,49 +430,107 @@
 .gallery__item:hover img { transform: scale(1.04); }
 .gallery__item.is-hidden { display: none; }
 
-/* Video facade (poster + play button; the <video> is injected on click) */
-.gallery__play {
+/* The clickable layer inside each tile (a <button> for photos, an <a> for videos) */
+.gallery__open {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
 }
-.gallery__play picture,
-.gallery__play img { width: 100%; height: 100%; }
-.gallery__play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: rgba(15, 27, 45, 0.55);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.gallery__play:hover .gallery__play-icon {
-  background-color: var(--accent);
-  transform: translate(-50%, -50%) scale(1.08);
-}
-.gallery__play-icon svg {
-  width: 26px;
-  height: 26px;
-  margin-left: 3px; /* optically center the triangle */
-  fill: var(--white);
-}
-/* Injected <video> fills the tile */
-.gallery__video {
+
+/* Hover/focus overlay: tint + icon + label */
+.gallery__hover {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: #000;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: transparent;
+  color: var(--white);
+  pointer-events: none;
+  transition: background-color 0.3s ease;
 }
+.gallery__open:hover .gallery__hover,
+.gallery__open:focus-visible .gallery__hover {
+  background-color: rgba(15, 27, 45, 0.55);
+}
+
+.gallery__hover-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+.gallery__hover-icon svg { width: 24px; height: 24px; fill: var(--white); }
+.gallery__open:hover .gallery__hover-icon,
+.gallery__open:focus-visible .gallery__hover-icon { opacity: 1; background-color: var(--accent);}
+
+/* Video tiles: the play button stays visible even without hover (also for touch) */
+.gallery__item--video .gallery__hover-icon {
+  opacity: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+.gallery__item--video .gallery__hover-icon svg { margin-left: 3px; } /* optically center the triangle */
+
+.gallery__hover-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.gallery__open:hover .gallery__hover-label,
+.gallery__open:focus-visible .gallery__hover-label { opacity: 1; }
+
+/* ---- Lightbox (enlarged photo) ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(9, 15, 25, 0.88);
+}
+.lightbox.is-open { display: flex; }
+.lightbox__img {
+  max-width: min(1000px, 92vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+}
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.16);
+  transition: background-color 0.2s ease;
+}
+.lightbox__close:hover { background-color: rgba(255, 255, 255, 0.3); }
+.lightbox__close svg { width: 22px; height: 22px; fill: var(--white); }
 
 @media (min-width: 36em) {
   /* Back to a normal grid: undo all the carousel-only rules */
