@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>L.A. Pope, LLC | B2B Event Marketing, Thought Leadership &amp; Voiceovers</title>
+  <meta name="description" content="L.A. Pope, LLC delivers B2B event marketing, content &amp; thought leadership, and professional voiceovers — bringing brands to life through unforgettable experiences.">
+
+  <!-- ==========================================================================
+       PERFORMANCE: preload above-the-fold assets (per CodeStitch handbook)
+       ========================================================================== -->
+
+  <!-- Fonts used above the fold ONLY (hero heading + nav/body). Preloading more
+       than this hurts, not helps. crossorigin is required for fonts. -->
+  <link rel="preload" href="fonts/libre-baskerville-v24-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-v24-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Hero image = the LCP element. Preload the mobile crop first (mobile-first),
+       and let the browser pick WebP vs JPG via imagesrcset.
+       NOTE: uncomment once the image files are added to /images/home/. -->
+  <!--
+  <link rel="preload" as="image" type="image/webp"
+        href="images/home/hero-img-m.webp"
+        imagesrcset="images/home/hero-img-m.webp 800w, images/home/hero-img.webp 1920w"
+        imagesizes="100vw" fetchpriority="high">
+  -->
+
+  <!-- Stylesheets. global.css (tokens + reset + fonts) must load before styles.css.
+       Both are render-blocking on purpose: the header + hero are above the fold. -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- TODO: add favicon files, then reference them here. -->
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       HEADER — contact top bar + primary navigation
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+
+    <!-- Top contact bar: email · phone · socials -->
+    <div class="top-bar">
+      <div class="container top-bar__inner">
+        <ul class="top-bar__contact">
+          <li>
+            <a class="top-bar__link" href="mailto: loriann@lapope.llc">
+              <!-- envelope icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.2 8-5.2H4l8 5.2ZM3 7.9V18h18V7.9l-9 5.85L3 7.9Z"/></svg>
+              loriann@lapope.llc
+            </a>
+          </li>
+          <li>
+            <a class="top-bar__link" href="tel:+10000000000">
+              <!-- phone icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+              (000) 000-0000
+            </a>
+          </li>
+        </ul>
+
+        <ul class="top-bar__socials">
+          <li>
+            <a class="top-bar__social" href="#" aria-label="L.A. Pope, LLC on LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="top-bar__social" href="#" aria-label="L.A. Pope, LLC on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="top-bar__social" href="#" aria-label="L.A. Pope, LLC on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Primary navigation -->
+    <div class="nav">
+      <div class="container nav__inner">
+        <a class="nav__logo" href="/" aria-label="L.A. Pope, LLC home">l.a. pope, llc<span>.</span></a>
+
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <nav class="nav__menu" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#home">Home</a></li>
+            <li><a class="nav__link" href="#gallery">Gallery</a></li>
+            <li><a class="nav__link" href="#services">Services</a></li>
+            <li><a class="nav__link" href="#about">About</a></li>
+            <!-- <li><a class="nav__link" href="#contact">Contact</a></li> -->
+            <li class="nav__cta-item">
+              <a class="btn btn--solid btn--arrow nav__cta" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- ==========================================================================
+         HERO — full-bleed image with overlay text
+         Uses <picture> (NOT a CSS background) per the CodeStitch handbook so the
+         image is a real LCP element we can preload + prioritize.
+         The <img> is NOT lazy-loaded (above the fold) and has fetchpriority="high".
+         Drop these files into /images/home/ when ready:
+           hero-img.webp / hero-img.jpg        (desktop, ~1920w)
+           hero-img-m.webp / hero-img-m.jpg     (mobile crop, ~800w)
+         ========================================================================== -->
+    <section class="hero" id="home">
+      <picture class="hero__bg">
+        <source media="(max-width: 600px)" srcset="images/home/hero-img-m.webp" type="image/webp">
+        <source media="(max-width: 600px)" srcset="images/home/hero-img-m.jpg">
+        <source media="(min-width: 601px)" srcset="images/home/hero-img.webp" type="image/webp">
+        <source media="(min-width: 601px)" srcset="images/home/hero-img.jpg">
+        <img src="images/home/hero-img.jpg"
+             alt="A live brand experience produced by L.A. Pope, LLC"
+             width="1920" height="1280"
+             decoding="async" fetchpriority="high">
+      </picture>
+
+      <div class="container">
+        <div class="hero__inner">
+          <span class="topper hero__topper">l.a. pope, llc</span>
+          <h1 class="hero__title">Experiences that move brands forward</h1>
+          <p class="hero__text">
+            B2B event marketing, content &amp; thought leadership, and professional
+            voiceovers &mdash; all under one roof. We help brands connect with the
+            people who matter most.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--solid btn--arrow" href="#contact">Get in Touch</a>
+            <a class="btn btn--ghost" href="#services">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALLERY — editorial mixed grid (photos + videos) with filter tabs
+         Everything here is below the fold: images are loading="lazy" + decoding="async".
+         Videos use a click-to-play facade — the .mp4 only downloads when the play
+         button is clicked (poster image shows until then). Huge perf win.
+         Drop files into /images/gallery/ using this naming:
+           photos:  gallery-01.webp / gallery-01.jpg            (odd numbers)
+           videos:  gallery-02-poster.webp / -poster.jpg  +  gallery-02.mp4  (even numbers)
+         All crops are 4:5 (e.g. 800×1000). Replace every "TODO" alt with a real description.
+         ========================================================================== -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <header class="gallery__header">
+          <div class="gallery__intro">
+            <span class="topper">Gallery</span>
+            <h2 class="gallery__title">Moments We've Created</h2>
+            <p class="gallery__text">
+              A look at the experiences, activations, and stages we've brought to
+              life for brands and the audiences they care about.
+            </p>
+          </div>
+
+          <div class="gallery__filters" role="group" aria-label="Filter gallery by type">
+            <button class="gallery__filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="gallery__filter" type="button" data-filter="photo" aria-pressed="false">Photos</button>
+            <button class="gallery__filter" type="button" data-filter="video" aria-pressed="false">Videos</button>
+          </div>
+        </header>
+
+        <!-- Mobile only: the grid below becomes a horizontal swipe carousel to save
+             vertical space. This hint tells the user they can swipe sideways. -->
+        <p class="gallery__hint">
+          Swipe to see more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </p>
+
+        <div class="gallery__grid">
+
+          <!-- 01 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-01.webp">
+              <img src="images/gallery/gallery-01.jpg" alt="TODO: describe photo 01" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 02 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-02.mp4" aria-label="Play video 02">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-02-poster.webp">
+                <img src="images/gallery/gallery-02-poster.jpg" alt="TODO: describe video 02" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+          <!-- 03 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-03.webp">
+              <img src="images/gallery/gallery-03.jpg" alt="TODO: describe photo 03" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 04 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-04.mp4" aria-label="Play video 04">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-04-poster.webp">
+                <img src="images/gallery/gallery-04-poster.jpg" alt="TODO: describe video 04" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+          <!-- 05 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-05.webp">
+              <img src="images/gallery/gallery-05.jpg" alt="TODO: describe photo 05" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 06 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-06.mp4" aria-label="Play video 06">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-06-poster.webp">
+                <img src="images/gallery/gallery-06-poster.jpg" alt="TODO: describe video 06" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+          <!-- 07 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-07.webp">
+              <img src="images/gallery/gallery-07.jpg" alt="TODO: describe photo 07" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 08 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-08.mp4" aria-label="Play video 08">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-08-poster.webp">
+                <img src="images/gallery/gallery-08-poster.jpg" alt="TODO: describe video 08" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+          <!-- 09 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-09.webp">
+              <img src="images/gallery/gallery-09.jpg" alt="TODO: describe photo 09" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 10 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-10.mp4" aria-label="Play video 10">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-10-poster.webp">
+                <img src="images/gallery/gallery-10-poster.jpg" alt="TODO: describe video 10" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+          <!-- 11 · photo -->
+          <figure class="gallery__item" data-type="photo">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/gallery-11.webp">
+              <img src="images/gallery/gallery-11.jpg" alt="TODO: describe photo 11" width="800" height="1000" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+
+          <!-- 12 · video -->
+          <figure class="gallery__item gallery__item--video" data-type="video">
+            <button class="gallery__play" type="button" data-video="images/gallery/gallery-12.mp4" aria-label="Play video 12">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-12-poster.webp">
+                <img src="images/gallery/gallery-12-poster.jpg" alt="TODO: describe video 12" width="800" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <span class="gallery__play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES — three cards (icon badge + tinted image + description bullets)
+         Below the fold: images are loading="lazy" + decoding="async".
+         Drop 3:2 crops into /images/services/ using this naming:
+           service-events.webp / .jpg
+           service-content.webp / .jpg
+           service-voiceovers.webp / .jpg
+         Replace each "TODO" alt + the placeholder copy/bullets with Lori's real content.
+         ========================================================================== -->
+    <section class="services" id="services">
+      <div class="container">
+        <header class="services__header">
+          <span class="topper">Services</span>
+          <h2 class="services__title">What we do</h2>
+          <p class="services__text">
+            Three ways L.A. Pope, LLC helps brands connect with the people who
+            matter most &mdash; from the stage to the studio.
+          </p>
+        </header>
+
+        <div class="services__grid">
+
+          <!-- Card 1 · B2B Event Marketing -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 9v6h3l7 4V5L7 9H4Zm14.5 3a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 18.5 12ZM16 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54Z"/></svg>
+            </div>
+            <div class="service-card__media">
+              <picture>
+                <source type="image/webp" srcset="images/services/service-events.webp">
+                <img src="images/services/service-events.jpg" alt="TODO: describe the event marketing photo" width="720" height="480" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">B2B Event Marketing</h3>
+              <p class="service-card__text">
+                End-to-end experiential events that put your brand in the room with
+                the audiences it wants to reach.
+              </p>
+              <ul class="service-card__list">
+                <li>Experiential activations &amp; brand moments</li>
+                <li>Event strategy &amp; production</li>
+                <li>On-site programming &amp; management</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 2 · Content & Thought Leadership -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1Zm3-19a7 7 0 0 0-4 12.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A7 7 0 0 0 12 2Z"/></svg>
+            </div>
+            <div class="service-card__media">
+              <picture>
+                <source type="image/webp" srcset="images/services/service-content.webp">
+                <img src="images/services/service-content.jpg" alt="TODO: describe the content / thought leadership photo" width="720" height="480" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Content &amp; Thought Leadership</h3>
+              <p class="service-card__text">
+                Positioning leaders and brands as the voice of their industry through
+                sharp, credible content.
+              </p>
+              <ul class="service-card__list">
+                <li>Thought-leadership strategy</li>
+                <li>Panels, talks &amp; speaking programs</li>
+                <li>Editorial &amp; content development</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 3 · Voiceovers -->
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>
+            </div>
+            <div class="service-card__media">
+              <picture>
+                <source type="image/webp" srcset="images/services/service-voiceovers.webp">
+                <img src="images/services/service-voiceovers.jpg" alt="TODO: describe the voiceover / studio photo" width="720" height="480" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Voiceovers</h3>
+              <p class="service-card__text">
+                Professional, polished voiceover work that gives your brand a warm,
+                credible voice.
+              </p>
+              <ul class="service-card__list">
+                <li>Commercial &amp; brand narration</li>
+                <li>Corporate &amp; e-learning</li>
+                <li>Event &amp; promo voiceovers</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AGENCY COLLABORATIONS — infinite auto-scrolling logo marquee (pure CSS)
+         The logo set is duplicated (2nd copy aria-hidden) so the loop is seamless.
+         Logos are grayscale + muted, full-colour on hover. Pauses on hover; stops
+         entirely for reduced-motion users. Direction is left→right — flip it by
+         swapping the from/to in the @keyframes (see styles.css).
+         ========================================================================== -->
+    <div class="soft-gradient">
+    <section class="agencies" id="agencies">
+      <div class="container agencies__header">
+        <span class="topper">Collaborations</span>
+        <h2 class="agencies__title">Agencies I've partnered with</h2>
+        <p class="agencies__text">
+          Our decades of experience will guide your event and educational programs
+          to success. We have deep experience partnering with creative &amp;
+          experiential agencies to bring your brand to life and execute flawlessly.
+        </p>
+      </div>
+
+      <div class="marquee" role="img" aria-label="Logos of agencies L.A. Pope, LLC has collaborated with">
+        <ul class="marquee__track">
+          <!-- Set 1 -->
+          <li class="marquee__item"><img src="images/agencies/A2E.png" alt="A2E" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/Clive%20Agency%20Logo.png" alt="Clive Agency" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/Cogs%20%26%20Marvel.png" alt="Cogs &amp; Marvel" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/FIRST%20logo.png" alt="FIRST" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/Factory%20360%20logo.jpg" alt="Factory 360" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/IMC%20Logo.png" alt="IMC" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/Jack%20Morton%20Logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/OBE%20Logo.png" alt="OBE" loading="lazy" decoding="async"></li>
+
+          <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/A2E.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Clive%20Agency%20Logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Cogs%20%26%20Marvel.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/FIRST%20logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Factory%20360%20logo.jpg" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/IMC%20Logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Jack%20Morton%20Logo.jpeg" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/OBE%20Logo.png" alt="" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT — image left, text right. The image sits on a rounded card with a
+         decorative offset shape floating behind it (bottom-left).
+         Drop a 4:5 portrait into /images/about/ as: about-lori.webp / about-lori.jpg
+         ========================================================================== -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+
+        <div class="about__media">
+          <span class="about__shape" aria-hidden="true"></span>
+          <picture class="about__img">
+            <source type="image/webp" srcset="images/about/about-lori.webp">
+            <img src="images/about/about-lori.jpg" alt="Lori Ann Pope, founder of L.A. Pope, LLC" width="800" height="1000" loading="lazy" decoding="async">
+          </picture>
+        </div>
+
+        <div class="about__body">
+          <span class="topper">About</span>
+          <h2 class="about__title">Meet L.A.</h2>
+
+          <p class="about__text">
+            Lori Ann Pope has spent 20 years turning rooms full of strangers into
+            events people actually remember. Colleagues call her L.A. &mdash; which,
+            fittingly, is also the name behind her company, l.a.pope, llc. She's an
+            experiential marketer, producer, and strategist who's just as comfortable
+            running a 15,000-person Expo as she is curating an intimate room of 100
+            C-suite executives &mdash; and she's led the cross-functional teams behind
+            both without breaking a sweat.
+          </p>
+          <p class="about__text">
+            Over nine years, she built the Boost small business training and education
+            program at Facebook from the ground up. Her process is start to finish:
+            Brainstorm to breakdown, content to agenda, agency partnerships to onsite
+            execution. L.A. is hands-on at every step.
+          </p>
+          <p class="about__text">
+            Here's her not-so-secret secret: her real superpower is building people.
+            She just happens to build exceptional event programs along the way.
+          </p>
+          <p class="about__text">
+            It all comes back to one thing &mdash; creating inclusive experiences that
+            put people first and deliver results that are measurable, memorable, and
+            meaningful.
+          </p>
+        </div>
+      </div>
+    </section>
+    </div><!-- /.soft-gradient -->
+
+    <!-- ==========================================================================
+         CONTACT — two-panel card (info + form) floating on a background image.
+         Background is a lazy <picture> (like the hero) with a navy overlay for contrast.
+         Drop a wide crop into /images/contact/ as: contact-bg.webp / contact-bg.jpg
+         NOTE: the <form> is not wired to a backend yet. Point action= at a form service
+         (Formspree, Netlify Forms, Basin, etc.) to actually receive submissions.
+         ========================================================================== -->
+    <section class="contact" id="contact">
+      <picture class="contact__bg">
+        <source type="image/webp" srcset="images/contact/contact-bg.webp">
+        <img src="images/contact/contact-bg.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+      </picture>
+
+      <div class="container">
+        <div class="contact__card">
+
+          <!-- Left: contact info -->
+          <div class="contact__info">
+            <h2 class="contact__title">Get in Touch</h2>
+
+            <a class="info-card" href="mailto:loriann@lapope.llc">
+              <span class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 7.2 8-5.2H4l8 5.2ZM3 7.9V18h18V7.9l-9 5.85L3 7.9Z"/></svg>
+              </span>
+              <span class="info-card__meta">
+                <span class="info-card__label">Email</span>
+                <span class="info-card__value">loriann@lapope.llc</span>
+              </span>
+            </a>
+
+            <a class="info-card" href="tel:+13038566388">
+              <span class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+              </span>
+              <span class="info-card__meta">
+                <span class="info-card__label">Phone Number</span>
+                <span class="info-card__value">(000) 000-0000</span> <!-- TODO: real number -->
+              </span>
+            </a>
+
+            <div class="info-card info-card--static">
+              <span class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+              </span>
+              <span class="info-card__meta">
+                <span class="info-card__label">Based In</span>
+                <span class="info-card__value">San Francisco Bay Area</span> <!-- TODO: confirm location -->
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <form class="contact__form" action="#" method="post">
+            <div class="field">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Enter your full name" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="Enter your email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="contact-project-type">Project Type</label>
+              <input type="text" id="contact-project-type" name="project_type" placeholder="Event marketing, thought leadership, voiceover…">
+            </div>
+
+            <div class="field">
+              <label for="contact-message">Brief project description</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Share goals, audience, timeline, and any details you think are important." required></textarea>
+            </div>
+
+            <div class="contact__submit">
+              <button type="submit" class="btn btn--solid btn--arrow">Send Message</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Deferred, at the bottom of body (per handbook). -->
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/gallery.js"></script>
+</body>
+</html>
