@@ -1131,3 +1131,41 @@ a.info-card:hover {
   }
   .footer__brand { grid-column: auto; } /* brand becomes the first of 4 columns */
 }
+
+
+/* ==========================================================================
+   SCROLL REVEAL  (fade + rise as each section enters view)
+   Only active when JS is on (.js on <html>) AND motion is allowed. reveal.js
+   adds .is-visible per section, staggered. No-JS / reduced-motion → all visible.
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .js .topper,
+  .js .hero__title,
+  .js .hero__text,
+  .js .hero__actions,
+  .js .gallery__title,
+  .js .gallery__text,
+  .js .gallery__item,
+  .js .services__title,
+  .js .services__text,
+  .js .service-card,
+  .js .agencies__title,
+  .js .agencies__text,
+  .js .marquee,
+  .js .about__media,
+  .js .about__title,
+  .js .about__text,
+  .js .contact__title,
+  .js .info-card,
+  .js .contact__form,
+  .js .footer__brand,
+  .js .footer__col {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 2s ease, transform 2.5s ease;
+  }
+  .js .is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

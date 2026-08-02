@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Flags that JS is on, so scroll-reveal elements hide BEFORE first paint (no flash).
+       Without JS this class is never added → everything shows normally. -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <title>L.A. Pope, LLC | B2B Event Marketing, Thought Leadership &amp; Voiceovers</title>
   <meta name="description" content="L.A. Pope, LLC delivers B2B event marketing, content &amp; thought leadership, and professional voiceovers — bringing brands to life through unforgettable experiences.">
 
@@ -206,7 +210,7 @@
           <!-- 02 · video — Facebook Community Boost → URL MISSING -->
           <!-- TODO: add the Facebook Community Boost video URL (it was a hyperlink in Lori's doc, not captured in the screenshot) -->
           <figure class="gallery__item gallery__item--video" data-type="video">
-            <a class="gallery__open" href="#" target="_blank" rel="noopener" aria-label="Watch video in a new tab: Facebook Community Boost">
+            <a class="gallery__open" href="https://www.obexp.com/project/facebook-community-boost" target="_blank" rel="noopener" aria-label="Watch video in a new tab: Facebook Community Boost">
               <picture>
                 <source type="image/webp" srcset="images/gallery/video-1-d.webp">
                 <img src="images/gallery/video-1-d.jpeg" alt="Facebook Community Boost case study" width="750" height="609" loading="lazy" decoding="async">
@@ -746,5 +750,6 @@
   <!-- Deferred, at the bottom of body (per handbook). -->
   <script defer src="js/nav.js"></script>
   <script defer src="js/gallery.js"></script>
+  <script defer src="js/reveal.js"></script>
 </body>
 </html>
