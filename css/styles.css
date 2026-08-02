@@ -803,7 +803,7 @@
   inset: 0;
   z-index: 0;
   border-radius: var(--radius-lg);
-  background-color: var(--accent-soft);
+  background-color: var(--accent);
   transform: translate(-1.25rem, 1.25rem); /* peek out to the bottom-left */
 }
 .about__img {
@@ -817,7 +817,7 @@
 .about__img img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9; /* landscape frame to match the 1200×667 photo */
   object-fit: cover;
 }
 
