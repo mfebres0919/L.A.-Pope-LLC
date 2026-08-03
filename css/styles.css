@@ -188,7 +188,8 @@
   border-bottom: 1px solid var(--line);
   transition: color 0.2s ease;
 }
-.nav__link:hover { color: var(--accent); }
+.nav__link:hover,
+.nav__link.is-active { color: var(--accent); } /* is-active = current section (set by scrollspy) */
 .nav__cta-item {
   margin-top: 1rem;
 }
@@ -318,7 +319,8 @@
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
   }
-  .nav__link:hover { border-bottom-color: var(--accent); }
+  .nav__link:hover,
+  .nav__link.is-active { border-bottom-color: var(--accent); }
   .nav__cta-item { margin-top: 0; margin-left: 0.75rem; }
   .nav__cta { width: auto; }
 
@@ -821,11 +823,25 @@
 /* Decorative arrow pointing to the photo — hidden on mobile (no room above the image) */
 .about__arrow {
   display: none;
+  /* bounce a few times (~1s), then hold still for ~3s, then repeat */
+  animation: about-arrow-bounce 4s ease-in-out infinite;
 }
 .about__arrow svg {
   width: 100%;
   height: auto;
   display: block;
+}
+
+@keyframes about-arrow-bounce {
+  0%   { transform: translateY(0); }
+  6%   { transform: translateY(-14px); }
+  12%  { transform: translateY(0); }
+  18%  { transform: translateY(-9px); }
+  25%  { transform: translateY(0); }
+  100% { transform: translateY(0); } /* the ~3s pause */
+}
+@media (prefers-reduced-motion: reduce) {
+  .about__arrow { animation: none; }
 }
 .about__img img {
   width: 100%;
