@@ -70,3 +70,20 @@
   sections.forEach(function (s) { io.observe(s); });
 })();
 
+
+/* Back-to-top button: appears after scrolling down, smooth-scrolls to the top. */
+(function () {
+  var btn = document.querySelector('.to-top');
+  if (!btn) return;
+
+  function toggle() {
+    btn.classList.toggle('is-visible', window.scrollY > 500);
+  }
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
