@@ -778,7 +778,7 @@
   .services { padding-block: 6rem; }
   .services__grid {
     grid-template-columns: repeat(3, 1fr);
-    align-items: start; /* natural card heights — no empty gap under the shorter card */
+    align-items: stretch; /* all cards match the tallest card's height */
     gap: 2rem;
     margin-top: 3rem;
   }
