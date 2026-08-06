@@ -3,7 +3,7 @@
    Triggering per-section (not per-element) means grid/carousel items that sit
    off-screen horizontally still reveal once you reach the section. */
 (function () {
-  var SEL = '.topper,.hero__title,.hero__text,.hero__actions,' +
+  var SEL = '.topper,.hero__wordmark,.hero__title,.hero__text,.hero__actions,' +
             '.gallery__title,.gallery__text,.gallery__item,' +
             '.services__title,.services__text,.service-card,' +
             '.agencies__title,.agencies__text,.marquee,' +

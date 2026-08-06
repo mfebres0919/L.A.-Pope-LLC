@@ -256,6 +256,37 @@ p { margin: 0; }
   color: var(--accent);
 }
 
+/* Brand wordmark:  lapope // experiential
+   - "lapope"       serif, inherits the surrounding text color
+   - "//"           accent blue (the differently-colored slash)
+   - "experiential" small sans, letter-spaced, muted — a different treatment
+   Size scales with the parent's font-size (set per context: nav, footer, hero). */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+  font-family: var(--font-head);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.wordmark__name { color: inherit; }
+.wordmark__slash {
+  color: var(--accent);
+  font-weight: 400;
+}
+.wordmark__tag {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.6em;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: inherit;
+  opacity: 0.72;         /* muted in both light & dark contexts */
+}
+
 /* Buttons — fully-rounded pills, matching the Voiceovers site */
 .btn {
   display: inline-flex;

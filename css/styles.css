@@ -55,12 +55,15 @@
   padding-block: 0.55rem;
 }
 .top-bar__contact {
-  display: none; /* hidden on phones — too cramped; returns at the 48em tablet breakpoint */
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.4rem 1.25rem;
 }
+/* Email + phone text are too cramped on phones — hidden until the 48em breakpoint.
+   The LinkedIn icon stays visible on all sizes. */
+.top-bar__textitem { display: none; }
 .top-bar__link {
   display: inline-flex;
   align-items: center;
@@ -121,7 +124,7 @@
   color: var(--ink);
   line-height: 1.1;
 }
-.nav__logo span { color: var(--accent); }
+.nav__logo .wordmark { font-size: inherit; }
 
 /* Hamburger toggle (mobile only) */
 .nav__toggle {
@@ -244,8 +247,12 @@
   text-align: center;
 }
 
-.hero__topper {
-  color: #a9c2f2; /* light corporate blue — readable on the dark overlay */
+.hero__wordmark {
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.hero__wordmark .wordmark__slash {
+  color: #a9c2f2; /* lighter blue so the slash reads on the dark overlay */
 }
 .hero__title {
   margin-top: 1rem;
@@ -282,9 +289,9 @@
    TABLET  (≥ 48em / 768px)
    ========================================================================== */
 @media (min-width: 48em) {
-  .top-bar__contact { display: flex; } /* bring email/phone back on tablet+ */
+  .top-bar__textitem { display: inline-flex; } /* bring email/phone back on tablet+ */
   .top-bar__inner {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .hero { min-height: 70svh; } /* TABLET: full svh is too tall in portrait — pull it in */
   .hero__text { font-size: 1.125rem; }
@@ -502,6 +509,26 @@
 .gallery__open:hover .gallery__hover-label,
 .gallery__open:focus-visible .gallery__hover-label { opacity: 1; }
 
+/* Persistent event-name caption on video tiles (so they're not "random") */
+.gallery__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* above the hover tint */
+  padding: 1.75rem 0.95rem 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  color: var(--white);
+  background: linear-gradient(to top,
+    rgba(15, 27, 45, 0.9) 0%,
+    rgba(15, 27, 45, 0.5) 45%,
+    rgba(15, 27, 45, 0) 100%);
+  pointer-events: none;
+}
+
 /* ---- Lightbox (enlarged photo) ---- */
 .lightbox {
   position: fixed;
@@ -660,6 +687,18 @@
 .service-card__body {
   padding: 1.75rem 1.5rem 2rem;
 }
+/* "lapope // service" brand eyebrow above each card title */
+.service-card__brand {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+.service-card__slash { color: var(--accent); }
+
 .service-card__title {
   font-size: 1.375rem;
 }
@@ -672,6 +711,27 @@
   margin-top: 1.1rem;
   display: grid;
   gap: 0.55rem;
+}
+/* Nested sub-services (dash markers, indented) */
+.service-card__sublist {
+  margin-top: 0.5rem;
+  margin-left: 1.6rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.service-card__sublist li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+.service-card__sublist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.55rem;
+  border-top: 2px solid var(--accent); /* dash */
 }
 .service-card__list li {
   position: relative;
@@ -691,10 +751,29 @@
   transform: rotate(-45deg); /* CSS checkmark */
 }
 
+/* External link on the Voiceovers card */
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent);
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.service-card__link svg { width: 16px; height: 16px; }
+.service-card__link:hover {
+  color: var(--accent-dark);
+  gap: 0.6rem;
+}
+
 @media (min-width: 62em) {
   .services { padding-block: 6rem; }
   .services__grid {
     grid-template-columns: repeat(3, 1fr);
+    align-items: start; /* natural card heights — no empty gap under the shorter card */
     gap: 2rem;
     margin-top: 3rem;
   }
@@ -1076,7 +1155,7 @@ a.info-card:hover {
   letter-spacing: 0.04em;
   color: var(--white);
 }
-.footer__logo span { color: var(--accent); }
+.footer__logo .wordmark { color: var(--white); }
 .footer__tagline {
   margin-top: 0.9rem;
   max-width: 24rem;
@@ -1168,6 +1247,7 @@ a.info-card:hover {
    ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
   .js .topper,
+  .js .hero__wordmark,
   .js .hero__title,
   .js .hero__text,
   .js .hero__actions,
