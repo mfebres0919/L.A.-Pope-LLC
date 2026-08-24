@@ -91,6 +91,7 @@
         <nav class="nav__menu" id="primary-nav" aria-label="Primary">
           <ul class="nav__list">
             <li><a class="nav__link" href="#home">Home</a></li>
+            <li><a class="nav__link" href="#programs">Programs</a></li>
             <li><a class="nav__link" href="#gallery">Gallery</a></li>
             <li><a class="nav__link" href="#services">Services</a></li>
             <li><a class="nav__link" href="#about">About</a></li>
@@ -130,8 +131,11 @@
 
       <div class="container">
         <div class="hero__inner">
-          <span class="wordmark hero__wordmark"><span class="wordmark__name">lapope</span><span class="wordmark__slash">//</span><span class="wordmark__tag">experiential</span></span>
-          <h1 class="hero__title">Experiences that move brands forward</h1>
+          <h1 class="wordmark hero__wordmark">
+            <span class="wordmark__name">lapope</span><span class="wordmark__slash">//</span><span class="wordmark__tag">experiential</span><span
+            class="wordmark__slash wordmark__slash--sub">//</span><span class="wordmark__tag wordmark__tag--sub">event programming</span><span
+            class="wordmark__slash wordmark__slash--sub">//</span><span class="wordmark__tag wordmark__tag--sub">voiceovers</span>
+          </h1>
           <p class="hero__text">
             Your event is your biggest marketing channel &mdash; treat it like one.
             That means a solid strategy and vision, clear key messaging, the right
@@ -141,6 +145,115 @@
             <a class="btn btn--solid btn--arrow" href="#contact">Get in Touch</a>
             <a class="btn btn--ghost" href="#services">Explore Services</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CURRENT PROGRAMS — in-development event series
+         One .program-card per program; the grid holds more than one if needed.
+
+         TO FINISH THIS SECTION, three drop-ins (all marked TODO below):
+           1. LOGO — save to /images/programs/own-whats-next-logo.png (or .webp,
+              transparent background, ~600px wide). Then delete the text lockup
+              and uncomment the <img> right below it.
+           2. REGISTRATION LINK — replace href="#" on the CTA with the live
+              Eventbrite URL.
+           3. PARTNER / SPONSOR LOGOS — save to /images/programs/, then uncomment
+              the .program-card__partners block and list them.
+         Until then the section renders cleanly with the text lockup alone.
+         ========================================================================== -->
+    <section class="programs" id="programs">
+      <div class="container">
+        <header class="programs__header">
+          <span class="topper">Now Building</span>
+          <h2 class="programs__title">Current Programs We're Building</h2>
+          <p class="programs__text">
+            Alongside client work, lapope / experiential develops its own event
+            programming. Here's what's in production right now.
+          </p>
+        </header>
+
+        <div class="programs__grid">
+          <article class="program-card">
+
+            <!-- Photo banner: image + dark scrim, with the status pill and the
+                 program logo sitting on top of it. -->
+            <div class="program-card__media">
+              <picture class="program-card__bg">
+                <source srcset="images/gallery/Attendees-Phones-d.webp" type="image/webp">
+                <img src="images/gallery/Attendees-Phones-d.jpeg"
+                     alt="" aria-hidden="true"
+                     loading="lazy" decoding="async">
+              </picture>
+
+              <div class="program-card__media-inner">
+                <p class="program-card__status">In Development</p>
+
+                <div class="program-card__logo">
+                  <!-- TODO 1: delete this lockup and uncomment the <img> once the logo arrives -->
+                  <p class="program-card__lockup">Own What's <em>Next</em></p>
+                  <!--
+                  <img src="images/programs/own-whats-next-logo.png"
+                       alt="Own What's Next" width="600" height="200"
+                       loading="lazy" decoding="async">
+                  -->
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card__body">
+              <p class="program-card__text">
+                <!-- TODO: replace with L.A.'s real description of the series -->
+                An event series built for people ready to take ownership of what
+                comes next in their careers and businesses — candid conversations,
+                practical takeaways, and a room worth being in.
+              </p>
+
+              <div class="program-card__actions">
+                <!-- Decorative arrow pointing at the CTA — the same hand-drawn mark
+                     used in the About section. Desktop/tablet only (no room beside
+                     the button on phones). -->
+                <span class="program-card__arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g fill="#2456C9"><g><path d="m385.54 271.64-.8.45.8-.45ZM447.89 211.06c-18.76-27.31-44.82-59.56-66.31-83.65a9.18 9.18 0 0 0-5.38-3.7c-10.65-2.09-14.53 7.22-6.33 14.04 18.97 23.31 37.56 47.09 54.62 71.86-27.69-9-80.46-12.81-89.57-14-78.54-5.99-162.26 9.22-223.16 62.1-32.32 27.27-66.02 69.31-65.22 113.55-.02 7.28 17.74 8.59 19.2-5.66 7.56-72.25 95.56-133.37 162.44-146.43 55.03-12.22 112.14-8.65 167.2 1.5 23.18 4.25 22.56 5.37 29.51 7.79-17.27 11.16-35.79 20.45-53.52 30.85-6.49 5.38-28.25 9.44-21.03 20.84 10.16 11.23 24.87-4.35 35.21-8.51a2123.25 2123.25 0 0 0 33.44-19.16c10.18-7.17 31.93-15.13 34.5-27.99.37-5.08-2.96-9.39-5.57-13.44Z"></path></g></g></svg>
+                </span>
+
+                <!-- TODO 2: swap href="#" for the live Eventbrite registration URL -->
+                <a class="btn btn--solid btn--arrow" href="#"
+                   target="_blank" rel="noopener">Register on Eventbrite</a>
+              </div>
+
+              <!-- Partner / sponsor carousel — same .marquee component as the
+                   Collaborations section, just sized down.
+                   TODO 3: every logo below is a grey PLACEHOLDER .svg. Swap each
+                   src for the real file and put the partner's name in the alt.
+                   Both sets must stay identical — the 2nd copy is what makes the
+                   loop seamless. -->
+              <div class="program-card__partners">
+                <p class="program-card__partners-label">Partners &amp; Sponsors</p>
+
+                <div class="marquee marquee--partners" role="img" aria-label="Logos of Own What's Next partners and sponsors">
+                  <ul class="marquee__track">
+                    <!-- Set 1 -->
+                    <li class="marquee__item"><img src="images/programs/partner-01.svg" alt="Partner name" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item"><img src="images/programs/partner-02.svg" alt="Partner name" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item"><img src="images/programs/partner-03.svg" alt="Partner name" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item"><img src="images/programs/sponsor-01.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item"><img src="images/programs/sponsor-02.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item"><img src="images/programs/sponsor-03.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
+
+                    <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-01.svg" alt="" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-02.svg" alt="" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-03.svg" alt="" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-01.svg" alt="" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-02.svg" alt="" loading="lazy" decoding="async"></li>
+                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-03.svg" alt="" loading="lazy" decoding="async"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -160,9 +273,9 @@
         <header class="gallery__header">
           <div class="gallery__intro">
             <span class="topper">Gallery</span>
-            <h2 class="gallery__title">Moments We've Created</h2>
+            <h2 class="gallery__title">Seeing (and hearing) is believing.</h2>
             <p class="gallery__text">
-              Seeing is believing. From industry tentpoles to small business education roadshows to executive offsites, this is what lapope / experiential brings to life — take a look around.
+              From industry tentpoles to small business education roadshows to executive offsites, this is what lapope / experiential brings to life — take a look around.
             </p>
           </div>
 
@@ -193,12 +306,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Main Stage Fireside Chat</span>
             </button>
           </figure>
 
-          <!-- 02 · video — Facebook Community Boost → https://www.obexp.com/project/facebook-community-boost -->
+          <!-- 02 · video — Facebook Community Boost → https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvimeo.com%2F779419687%3Ffl%3Dpl%26fe%3Dsh&data=05%7C02%7C%7C0b6598311bfa46210ce708defaf5cfe2%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639224131177842934%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=8XJzInbvCBVFGHr%2BjOyP6kVzjdi2iS4x%2FXaVcee155Q%3D&reserved=0 -->
           <figure class="gallery__item gallery__item--video" data-type="video">
-            <a class="gallery__open" href="https://www.obexp.com/project/facebook-community-boost" target="_blank" rel="noopener" aria-label="Watch Facebook Community Boost video in a new tab">
+            <a class="gallery__open" href="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fvimeo.com%2F779419687%3Ffl%3Dpl%26fe%3Dsh&data=05%7C02%7C%7C0b6598311bfa46210ce708defaf5cfe2%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639224131177842934%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=8XJzInbvCBVFGHr%2BjOyP6kVzjdi2iS4x%2FXaVcee155Q%3D&reserved=0" target="_blank" rel="noopener" aria-label="Watch Facebook Community Boost video in a new tab">
               <picture>
                 <source type="image/webp" srcset="images/gallery/video-1-d.webp">
                 <img src="images/gallery/video-1-d.jpeg" alt="Facebook Community Boost event" width="750" height="609" loading="lazy" decoding="async">
@@ -222,6 +336,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Community Boost: Registration</span>
             </button>
           </figure>
 
@@ -236,6 +351,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Mr. Wonderful, Community Boost Buffalo</span>
             </button>
           </figure>
 
@@ -314,6 +430,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Audience Moment</span>
             </button>
           </figure>
 
@@ -336,15 +453,16 @@
 
           <!-- 14 · photo — Attendee with paddleboards -->
           <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Attendee with paddleboards">
+            <button class="gallery__open" type="button" aria-label="View photo larger: Reactions photo moment">
               <picture>
                 <source type="image/webp" srcset="images/gallery/Attendee-Paddle-d.webp">
-                <img src="images/gallery/Attendee-Paddle-d.jpg" alt="Attendee holding paddleboards at a brand activation" width="805" height="1027" loading="lazy" decoding="async">
+                <img src="images/gallery/Attendee-Paddle-d.jpg" alt="An attendee smiling while holding Facebook love and laughing reaction paddles at a photo moment" width="805" height="1027" loading="lazy" decoding="async">
               </picture>
               <span class="gallery__hover" aria-hidden="true">
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Reactions Photo Moment</span>
             </button>
           </figure>
 
@@ -359,6 +477,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
+              <span class="gallery__caption">Great Starts Small</span>
             </button>
           </figure>
 
@@ -381,7 +500,7 @@
           <span class="topper">Services</span>
           <h2 class="services__title">What we do</h2>
           <p class="services__text">
-            	Whatever the goal, there’s a way to bring it to life. From full-scale B2B event strategy to conference programming to voiceover work, lapope / experiential covers the full toolkit — pick your lane, or use them all.
+            	Whatever the goal, there's a way to bring it to life. From full-scale B2B event strategy to conference programming to voiceover work, lapope // experiential covers the full toolkit — pick your lane, or use them all.
 
           </p>
         </header>
@@ -413,7 +532,7 @@
                 </li>
                 <li>Bespoke C-suite programs</li>
                 <li>Conference event management</li>
-                <li>Community engagement programs</li>
+                <li>SMB community engagement programs</li>
                 <li>Roadshows</li>
               </ul>
             </div>
@@ -431,10 +550,10 @@
               </picture>
             </div>
             <div class="service-card__body">
-              <p class="wordmark service-card__wordmark"><span class="wordmark__name">lapope</span><span class="wordmark__slash">//</span><span class="wordmark__tag">event programming &amp; thought leadership</span></p>
+              <p class="wordmark service-card__wordmark"><span class="wordmark__name">lapope</span><span class="wordmark__slash">//</span><span class="wordmark__tag">event programming</span></p>
               <ul class="service-card__list">
                 <li>Conference agenda research &amp; development</li>
-                <li>Speaker procurement &amp; management</li>
+                <li>Thought Leadership: speaker procurement &amp; management</li>
                 <li>Conference program production</li>
               </ul>
             </div>
@@ -482,35 +601,33 @@
     <section class="agencies" id="agencies">
       <div class="container agencies__header">
         <span class="topper">Collaborations</span>
-        <h2 class="agencies__title">Agencies I've partnered with</h2>
+        <h2 class="agencies__title">Collaboration Is the Highest Form of Connection</h2>
         <p class="agencies__text">
-          Our decades of experience will guide your event and educational programs
-          to success. We have deep experience partnering with creative &amp;
-          experiential agencies to bring your brand to life and execute flawlessly.
+       Two decades of experience means lapope // experiential doesn't just work alongside the best creative and experiential agencies in the business — we build with them. That partnership is where brands and communities come to life and execution goes flawlessly, every time.
         </p>
       </div>
 
       <div class="marquee" role="img" aria-label="Logos of agencies L.A. Pope, LLC has collaborated with">
         <ul class="marquee__track">
           <!-- Set 1 -->
-          <li class="marquee__item"><img src="images/agencies/A2E.png" alt="A2E" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/Clive%20Agency%20Logo.png" alt="Clive Agency" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/Cogs%20%26%20Marvel.png" alt="Cogs &amp; Marvel" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/FIRST%20logo.png" alt="FIRST" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/Factory%20360%20logo.jpg" alt="Factory 360" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/IMC%20Logo.png" alt="IMC" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/Jack%20Morton%20Logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/OBE%20Logo.png" alt="OBE" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/a2e-logo.png" alt="A2E" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/clive-agency-logo.png" alt="Clive Agency" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/cogs-marvel-logo.png" alt="Cogs &amp; Marvel" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/first-logo.png" alt="FIRST" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/factory-360-logo.png" alt="Factory 360" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/imc-logo.png" alt="IMC" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/jack-morton-logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><img src="images/agencies/obe-logo.png" alt="OBE" loading="lazy" decoding="async"></li>
 
           <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/A2E.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Clive%20Agency%20Logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Cogs%20%26%20Marvel.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/FIRST%20logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Factory%20360%20logo.jpg" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/IMC%20Logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/Jack%20Morton%20Logo.jpeg" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/OBE%20Logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/a2e-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/clive-agency-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/cogs-marvel-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/first-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/factory-360-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/imc-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/jack-morton-logo.jpeg" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/obe-logo.png" alt="" loading="lazy" decoding="async"></li>
         </ul>
       </div>
     </section>
@@ -541,18 +658,20 @@
 
           <p class="about__text">
             Lori Ann Pope has spent 20 years turning rooms full of strangers into
-            events people actually remember. Colleagues call her L.A. &mdash; which,
-            fittingly, is also the name behind her company, l.a.pope, llc. She's an
+            experiences people actually remember. Colleagues call her L.A., which,
+            fittingly, is also the name behind her company, LAPOPE, LLC. She's an
             experiential marketer, producer, and strategist who's just as comfortable
-            running a 15,000-person Expo as she is curating an intimate room of 100
-            C-suite executives &mdash; and she's led the cross-functional teams behind
+            running a 15,000-person conference and expo, as she is curating an intimate
+            room of 100 C-suite executives: She's led the cross-functional teams behind
             both without breaking a sweat.
           </p>
           <p class="about__text">
-            Over nine years, she built the Boost small business training and education
-            program at Facebook from the ground up. Her process is start to finish:
-            Brainstorm to breakdown, content to agenda, agency partnerships to onsite
-            execution. L.A. is hands-on at every step.
+            Over nine years, she built Boost, the SMB training and community engagement
+            program at Facebook and Meta, from the ground up. Watching that work ripple
+            through local communities around the globe&mdash;seeing economic development
+            happen up close&mdash;was some of the most resonant work of her career. Her
+            process is start to finish: Brainstorm to breakdown, content to agenda,
+            agency partnerships to onsite execution. L.A. is hands-on at every step.
           </p>
           <p class="about__text">
             Here's her not-so-secret secret: her real superpower is building people.
