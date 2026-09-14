@@ -630,8 +630,9 @@
          CONTACT — two-panel card (info + form) floating on a background image.
          Background is a lazy <picture> (like the hero) with a navy overlay for contrast.
          Drop a wide crop into /images/contact/ as: contact-bg.webp / contact-bg.jpg
-         NOTE: the <form> is not wired to a backend yet. Point action= at a form service
-         (Formspree, Netlify Forms, Basin, etc.) to actually receive submissions.
+         The <form> posts to Formspree (form ID moeqgkle). form.js intercepts the
+         submit and sends it over fetch so the visitor stays on the page; with JS
+         off it falls back to a normal POST and Formspree shows its own thank-you.
          ========================================================================== -->
     <section class="contact" id="contact">
       <picture class="contact__bg">
@@ -690,7 +691,12 @@
           </div>
 
           <!-- Right: form -->
-          <form class="contact__form" action="#" method="post">
+          <form class="contact__form" action="https://formspree.io/f/moeqgkle" method="POST">
+            <!-- Subject line on the email Lori receives. -->
+            <input type="hidden" name="_subject" value="New enquiry from lapope.llc">
+            <!-- Honeypot: bots fill this in, humans never see it. Formspree drops
+                 any submission that arrives with it filled. -->
+            <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="field">
               <label for="contact-name">Full Name</label>
               <input type="text" id="contact-name" name="name" placeholder="Enter your full name" autocomplete="name" required>
@@ -720,6 +726,10 @@
             <div class="contact__submit">
               <button type="submit" class="btn btn--solid btn--arrow">Send Message</button>
             </div>
+
+            <!-- Filled in by form.js after a fetch submit. role="status" so screen
+                 readers announce the result without moving focus. -->
+            <p class="contact__status" role="status" aria-live="polite" hidden></p>
           </form>
 
         </div>
@@ -812,5 +822,6 @@
   <script defer src="js/nav.js"></script>
   <script defer src="js/gallery.js"></script>
   <script defer src="js/reveal.js"></script>
+  <script defer src="js/form.js"></script>
 </body>
 </html>

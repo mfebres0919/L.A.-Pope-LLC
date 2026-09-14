@@ -1388,6 +1388,38 @@ a.info-card:hover {
   margin-top: 1.5rem;
 }
 
+/* Spam honeypot — hidden from everyone, including assistive tech. Only bots
+   fill it in, and Formspree bins anything that arrives with it set. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Submit result, written by form.js. Hidden until there's something to say. */
+.contact__status {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(36, 86, 201, 0.25);
+  background-color: rgba(36, 86, 201, 0.07);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.contact__status.is-error {
+  border-color: rgba(178, 44, 44, 0.3);
+  background-color: rgba(178, 44, 44, 0.07);
+}
+/* Sending… state — make it read as busy rather than clickable. */
+.contact__form button[disabled] {
+  opacity: 0.65;
+  cursor: progress;
+}
+
 @media (min-width: 64em) {
   .contact { padding-block: 6rem; }
   .contact__card { grid-template-columns: 0.9fr 1.1fr; }
