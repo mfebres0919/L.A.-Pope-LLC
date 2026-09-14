@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <title>lapope // experiential | B2B Event Marketing, Thought Leadership &amp; Voiceovers</title>
-  <meta name="description" content="L.A. Pope, LLC delivers B2B event marketing, content &amp; thought leadership, and professional voiceovers — bringing brands to life through unforgettable experiences.">
+  <meta name="description" content="L.A. POPE, LLC delivers B2B event marketing, content &amp; thought leadership, and professional voiceovers — bringing brands to life through unforgettable experiences.">
 
   <!-- ==========================================================================
        PERFORMANCE: preload above-the-fold assets (per CodeStitch handbook)
@@ -22,14 +22,11 @@
   <link rel="preload" href="fonts/poppins-v24-latin-600.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Hero image = the LCP element. Preload the mobile crop first (mobile-first),
-       and let the browser pick WebP vs JPG via imagesrcset.
-       NOTE: uncomment once the image files are added to /images/home/. -->
-  <!--
+       and let the browser pick WebP vs JPG via imagesrcset. -->
   <link rel="preload" as="image" type="image/webp"
         href="images/home/hero-img-m.webp"
-        imagesrcset="images/home/hero-img-m.webp 800w, images/home/hero-img.webp 1920w"
+        imagesrcset="images/home/hero-img-m.webp 800w, images/home/hero-img-d.webp 1920w"
         imagesizes="100vw" fetchpriority="high">
-  -->
 
   <!-- Stylesheets. global.css (tokens + reset + fonts) must load before styles.css.
        Both are render-blocking on purpose: the header + hero are above the fold. -->
@@ -60,7 +57,7 @@
           </li>
           <li>
             <!-- LinkedIn — sits right beside the email so it isn't alone on the right -->
-            <a class="top-bar__social" href="https://www.linkedin.com/in/loriannpope/" aria-label="L.A. Pope, LLC on LinkedIn">
+            <a class="top-bar__social" href="https://www.linkedin.com/in/loriannpope/" aria-label="L.A. POPE, LLC on LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
             </a>
           </li>
@@ -124,18 +121,14 @@
         <source media="(min-width: 601px)" srcset="images/home/hero-img-d.webp" type="image/webp">
         <source media="(min-width: 601px)" srcset="images/home/hero-img-d.jpg">
         <img src="images/home/hero-img-d.jpg"
-             alt="A live brand experience produced by L.A. Pope, LLC"
+             alt="A live brand experience produced by L.A. POPE, LLC"
              width="1920" height="1280"
              decoding="async" fetchpriority="high">
       </picture>
 
       <div class="container">
         <div class="hero__inner">
-          <h1 class="wordmark hero__wordmark">
-            <span class="wordmark__name">lapope</span><span class="wordmark__slash">//</span><span class="wordmark__tag">experiential</span><span
-            class="wordmark__slash wordmark__slash--sub">//</span><span class="wordmark__tag wordmark__tag--sub">event programming</span><span
-            class="wordmark__slash wordmark__slash--sub">//</span><span class="wordmark__tag wordmark__tag--sub">voiceovers</span>
-          </h1>
+          <h1 class="hero__title">Translating brand purpose into engaging culturally relevant experiences</h1>
           <p class="hero__text">
             Your event is your biggest marketing channel &mdash; treat it like one.
             That means a solid strategy and vision, clear key messaging, the right
@@ -153,23 +146,19 @@
          CURRENT PROGRAMS — in-development event series
          One .program-card per program; the grid holds more than one if needed.
 
-         TO FINISH THIS SECTION, three drop-ins (all marked TODO below):
-           1. LOGO — save to /images/programs/own-whats-next-logo.png (or .webp,
-              transparent background, ~600px wide). Then delete the text lockup
-              and uncomment the <img> right below it.
-           2. REGISTRATION LINK — replace href="#" on the CTA with the live
-              Eventbrite URL.
-           3. PARTNER / SPONSOR LOGOS — save to /images/programs/, then uncomment
-              the .program-card__partners block and list them.
-         Until then the section renders cleanly with the text lockup alone.
+         TO FINISH THIS SECTION, two drop-ins (both marked TODO below):
+           1. SIGNUP LINK — replace href="#" on the CTA with the mailing-list /
+              signup URL.
+           2. PARTNER / SPONSOR CONTACT — drop Dana Michel's contact details into
+              the .program-card__contact block and uncomment it.
          ========================================================================== -->
     <section class="programs" id="programs">
       <div class="container">
         <header class="programs__header">
           <span class="topper">Now Building</span>
-          <h2 class="programs__title">Current Programs We're Building</h2>
+          <h2 class="programs__title">Current Programs</h2>
           <p class="programs__text">
-            Alongside client work, lapope / experiential develops its own event
+            Alongside client work, lapope // experiential develops its own event
             programming. Here's what's in production right now.
           </p>
         </header>
@@ -191,23 +180,34 @@
                 <p class="program-card__status">In Development</p>
 
                 <div class="program-card__logo">
-                  <!-- TODO 1: delete this lockup and uncomment the <img> once the logo arrives -->
-                  <p class="program-card__lockup">Own What's <em>Next</em></p>
-                  <!--
-                  <img src="images/programs/own-whats-next-logo.png"
-                       alt="Own What's Next" width="600" height="200"
+                  <picture>
+                    <source type="image/webp" srcset="images/programs/acquire-local-wordmark-white.webp">
+                    <img class="program-card__logo-mark"
+                         src="images/programs/acquire-local-wordmark-white.png"
+                         alt="Acquire Local" width="1400" height="226"
+                         loading="lazy" decoding="async">
+                  </picture>
+                  <img class="program-card__logo-street"
+                       src="images/programs/acquire-local-storefronts-tagline-white.svg"
+                       alt="Acquire a business. Preserve a legacy. Strengthen a community."
+                       width="745" height="150"
                        loading="lazy" decoding="async">
-                  -->
                 </div>
               </div>
             </div>
 
             <div class="program-card__body">
               <p class="program-card__text">
-                <!-- TODO: replace with L.A.'s real description of the series -->
-                An event series built for people ready to take ownership of what
-                comes next in their careers and businesses — candid conversations,
-                practical takeaways, and a room worth being in.
+                <strong>The moment is now.</strong> A generation of professionals is
+                repositioning itself in a shifting workforce, and
+                <strong>half of America&rsquo;s small-business owners are nearing
+                retirement</strong> without a plan for what comes next.
+              </p>
+              <p class="program-card__text">
+                Acquire Local brings owners, first-time buyers, employees, advisors,
+                and capital partners into one room to change that.
+                <em>Acquire a business. Preserve a legacy. Strengthen a community.</em>
+                <strong>First stop: Brooklyn.</strong>
               </p>
 
               <div class="program-card__actions">
@@ -218,39 +218,20 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g fill="#2456C9"><g><path d="m385.54 271.64-.8.45.8-.45ZM447.89 211.06c-18.76-27.31-44.82-59.56-66.31-83.65a9.18 9.18 0 0 0-5.38-3.7c-10.65-2.09-14.53 7.22-6.33 14.04 18.97 23.31 37.56 47.09 54.62 71.86-27.69-9-80.46-12.81-89.57-14-78.54-5.99-162.26 9.22-223.16 62.1-32.32 27.27-66.02 69.31-65.22 113.55-.02 7.28 17.74 8.59 19.2-5.66 7.56-72.25 95.56-133.37 162.44-146.43 55.03-12.22 112.14-8.65 167.2 1.5 23.18 4.25 22.56 5.37 29.51 7.79-17.27 11.16-35.79 20.45-53.52 30.85-6.49 5.38-28.25 9.44-21.03 20.84 10.16 11.23 24.87-4.35 35.21-8.51a2123.25 2123.25 0 0 0 33.44-19.16c10.18-7.17 31.93-15.13 34.5-27.99.37-5.08-2.96-9.39-5.57-13.44Z"></path></g></g></svg>
                 </span>
 
-                <!-- TODO 2: swap href="#" for the live Eventbrite registration URL -->
-                <a class="btn btn--solid btn--arrow" href="#"
-                   target="_blank" rel="noopener">Register on Eventbrite</a>
+                <!-- TODO 1: point href at the signup form / mailing list once it exists.
+                     Eventbrite registration is off the table for now. -->
+                <a class="btn btn--solid btn--arrow" href="#">Sign up for Updates</a>
               </div>
 
-              <!-- Partner / sponsor carousel — same .marquee component as the
-                   Collaborations section, just sized down.
-                   TODO 3: every logo below is a grey PLACEHOLDER .svg. Swap each
-                   src for the real file and put the partner's name in the alt.
-                   Both sets must stay identical — the 2nd copy is what makes the
-                   loop seamless. -->
-              <div class="program-card__partners">
-                <p class="program-card__partners-label">Partners &amp; Sponsors</p>
-
-                <div class="marquee marquee--partners" role="img" aria-label="Logos of Own What's Next partners and sponsors">
-                  <ul class="marquee__track">
-                    <!-- Set 1 -->
-                    <li class="marquee__item"><img src="images/programs/partner-01.svg" alt="Partner name" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item"><img src="images/programs/partner-02.svg" alt="Partner name" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item"><img src="images/programs/partner-03.svg" alt="Partner name" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item"><img src="images/programs/sponsor-01.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item"><img src="images/programs/sponsor-02.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item"><img src="images/programs/sponsor-03.svg" alt="Sponsor name" loading="lazy" decoding="async"></li>
-
-                    <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-01.svg" alt="" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-02.svg" alt="" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/partner-03.svg" alt="" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-01.svg" alt="" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-02.svg" alt="" loading="lazy" decoding="async"></li>
-                    <li class="marquee__item" aria-hidden="true"><img src="images/programs/sponsor-03.svg" alt="" loading="lazy" decoding="async"></li>
-                  </ul>
-                </div>
+              <!-- Partner / sponsor contact — replaced the old logo marquee. -->
+              <div class="program-card__contact">
+                <p class="program-card__contact-text">
+                  Acquire Local is built with <strong>sponsors, marketing partners, and
+                  resource partners</strong> who want to help carry good businesses
+                  forward. If that&rsquo;s you, please contact
+                  <strong>Dana Michel</strong> at
+                  <a href="mailto:dana@danakmichel.com">dana@danakmichel.com</a>.
+                </p>
               </div>
             </div>
           </article>
@@ -275,7 +256,7 @@
             <span class="topper">Gallery</span>
             <h2 class="gallery__title">Seeing (and hearing) is believing.</h2>
             <p class="gallery__text">
-              From industry tentpoles to small business education roadshows to executive offsites, this is what lapope / experiential brings to life — take a look around.
+              From producing B2B industry tentpoles to developing small business education to curating executive offsites, this is what lapope // experiential brings to life . . . take a look (and listen) around.
             </p>
           </div>
 
@@ -321,13 +302,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">Facebook Community Boost</span>
+              <span class="gallery__caption">Facebook Community Boost<span class="gallery__caption-agency">Agency: On Board Experiential (OBE)</span></span>
             </a>
           </figure>
 
           <!-- 03 · photo — Registration Desk -->
           <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Registration Desk">
+            <button class="gallery__open" type="button" aria-label="View photo larger: Facebook Community Boost Registration">
               <picture>
                 <source type="image/webp" srcset="images/gallery/Registration-Desk-d.webp">
                 <img src="images/gallery/Registration-Desk-d.jpg" alt="Event registration desk" width="801" height="1004" loading="lazy" decoding="async">
@@ -336,13 +317,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
-              <span class="gallery__caption">Community Boost: Registration</span>
+              <span class="gallery__caption">Facebook Community Boost Registration</span>
             </button>
           </figure>
 
           <!-- 04 · photo — Mr Wonderful / Shark Tank -->
           <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Mr Wonderful / Shark Tank">
+            <button class="gallery__open" type="button" aria-label="View photo larger: Kevin O&rsquo;Leary, Buffalo Ignite SMB Grant Competition">
               <picture>
                 <source type="image/webp" srcset="images/gallery/MrWonderful-Shark-Tank-d.webp">
                 <img src="images/gallery/MrWonderful-Shark-Tank-d.jpg" alt="Mr. Wonderful at a Shark Tank event" width="800" height="1200" loading="lazy" decoding="async">
@@ -351,13 +332,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
                 <span class="gallery__hover-label">View Photo</span>
               </span>
-              <span class="gallery__caption">Mr. Wonderful, Community Boost Buffalo</span>
+              <span class="gallery__caption">Kevin O&rsquo;Leary, Buffalo Ignite SMB Grant Competition</span>
             </button>
           </figure>
 
-          <!-- 05 · video — VOG: Meta Connect → https://www.youtube.com/watch?v=meS8IA3AOfE -->
+          <!-- 05 · video — Voiceover: VOG for Llama Con 2025 → https://www.youtube.com/watch?v=meS8IA3AOfE -->
           <figure class="gallery__item gallery__item--video" data-type="video">
-            <a class="gallery__open" href="https://www.youtube.com/watch?v=meS8IA3AOfE" target="_blank" rel="noopener" aria-label="Watch VOG: Meta Connect video in a new tab">
+            <a class="gallery__open" href="https://www.youtube.com/watch?v=meS8IA3AOfE" target="_blank" rel="noopener" aria-label="Watch Voiceover: VOG for Llama Con 2025 video in a new tab">
               <picture>
                 <source type="image/webp" srcset="images/gallery/video-2-d.webp">
                 <img src="images/gallery/video-2-d.jpeg" alt="VOG: Meta Connect — voiceover introducing Mark Zuckerberg" width="469" height="459" loading="lazy" decoding="async">
@@ -366,7 +347,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">VOG: Meta Connect</span>
+              <span class="gallery__caption">Voiceover: VOG for Llama Con 2025</span>
             </a>
           </figure>
 
@@ -374,7 +355,7 @@
 
           <!-- 07 · video — #buyBlack Friday → https://vimeo.com/681981258 -->
           <figure class="gallery__item gallery__item--video" data-type="video">
-            <a class="gallery__open" href="https://vimeo.com/681981258?fl=pl&amp;fe=vl" target="_blank" rel="noopener" aria-label="Watch #buyBlack Friday video in a new tab">
+            <a class="gallery__open" href="https://vimeo.com/681981258?fl=pl&amp;fe=vl" target="_blank" rel="noopener" aria-label="Watch Live Show: #buyBlack Friday with host Elaine Welteroth video in a new tab">
               <picture>
                 <source type="image/webp" srcset="images/gallery/video-3-d.webp">
                 <img src="images/gallery/video-3-d.jpeg" alt="#buyBlack Friday show" width="605" height="577" loading="lazy" decoding="async">
@@ -383,7 +364,7 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">#buyBlack Friday</span>
+              <span class="gallery__caption">Live Show: #buyBlack Friday with host Elaine Welteroth<span class="gallery__caption-agency">Agency: Westbrook, Inc.</span></span>
             </a>
           </figure>
 
@@ -398,13 +379,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">Meta Small Business Studios</span>
+              <span class="gallery__caption">Meta Small Business Studios<span class="gallery__caption-agency">Agency: Factory 360</span></span>
             </a>
           </figure>
 
-          <!-- 09 · video — Good Ideas Festival → https://www.obexp.com/project/meta-boost-with-facebook-good-ideas-festival- -->
+          <!-- 09 · video — Sizzle Reel: Good Ideas Festival → https://www.obexp.com/project/meta-boost-with-facebook-good-ideas-festival- -->
           <figure class="gallery__item gallery__item--video" data-type="video">
-            <a class="gallery__open" href="https://www.obexp.com/project/meta-boost-with-facebook-good-ideas-festival-" target="_blank" rel="noopener" aria-label="Watch Good Ideas Festival video in a new tab">
+            <a class="gallery__open" href="https://www.obexp.com/project/meta-boost-with-facebook-good-ideas-festival-" target="_blank" rel="noopener" aria-label="Watch Sizzle Reel: Good Ideas Festival video in a new tab">
               <picture>
                 <source type="image/webp" srcset="images/gallery/video-5-d.webp">
                 <img src="images/gallery/video-5-d.jpeg" alt="Good Ideas Festival" width="472" height="544" loading="lazy" decoding="async">
@@ -413,26 +394,12 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">Good Ideas Festival</span>
+              <span class="gallery__caption">Sizzle Reel: Good Ideas Festival<span class="gallery__caption-agency">Agency: On Board Experiential (OBE)</span></span>
             </a>
           </figure>
 
           <!-- 10 · PHOTO (coming) — Direct Mktg Assoc (DMA) Expo -->
 
-          <!-- 11 · photo — Attendees holding phones up -->
-          <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Attendees holding phones up">
-              <picture>
-                <source type="image/webp" srcset="images/gallery/Attendees-Phones-d.webp">
-                <img src="images/gallery/Attendees-Phones-d.jpeg" alt="Event attendees holding up their phones" width="801" height="789" loading="lazy" decoding="async">
-              </picture>
-              <span class="gallery__hover" aria-hidden="true">
-                <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
-                <span class="gallery__hover-label">View Photo</span>
-              </span>
-              <span class="gallery__caption">Audience Moment</span>
-            </button>
-          </figure>
 
           <!-- 12 · video — Holiday Pop-Up Market, Miami → https://www.obexp.com/project/facebook-small-business-market -->
           <figure class="gallery__item gallery__item--video" data-type="video">
@@ -445,41 +412,13 @@
                 <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="gallery__hover-label">View Video</span>
               </span>
-              <span class="gallery__caption">Holiday Pop-Up Market, Miami</span>
+              <span class="gallery__caption">Holiday Pop-Up Market, Miami<span class="gallery__caption-agency">Agency: On Board Experiential (OBE)</span></span>
             </a>
           </figure>
 
           <!-- 13 · PHOTO (coming) — DMA -->
 
-          <!-- 14 · photo — Attendee with paddleboards -->
-          <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Reactions photo moment">
-              <picture>
-                <source type="image/webp" srcset="images/gallery/Attendee-Paddle-d.webp">
-                <img src="images/gallery/Attendee-Paddle-d.jpg" alt="An attendee smiling while holding Facebook love and laughing reaction paddles at a photo moment" width="805" height="1027" loading="lazy" decoding="async">
-              </picture>
-              <span class="gallery__hover" aria-hidden="true">
-                <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
-                <span class="gallery__hover-label">View Photo</span>
-              </span>
-              <span class="gallery__caption">Reactions Photo Moment</span>
-            </button>
-          </figure>
 
-          <!-- 15 · photo — Great Starts Small -->
-          <figure class="gallery__item" data-type="photo">
-            <button class="gallery__open" type="button" aria-label="View photo larger: Great Starts Small">
-              <picture>
-                <source type="image/webp" srcset="images/gallery/Great-Starts-Small-d.webp">
-                <img src="images/gallery/Great-Starts-Small-d.jpg" alt="Great Starts Small event branding" width="802" height="1007" loading="lazy" decoding="async">
-              </picture>
-              <span class="gallery__hover" aria-hidden="true">
-                <span class="gallery__hover-icon"><svg viewBox="0 0 24 24"><path d="M9 3H3v6h2V5h4V3zm12 0h-6v2h4v4h2V3zM5 15H3v6h6v-2H5v-4zm16 0h-2v4h-4v2h6v-6z"/></svg></span>
-                <span class="gallery__hover-label">View Photo</span>
-              </span>
-              <span class="gallery__caption">Great Starts Small</span>
-            </button>
-          </figure>
 
         </div>
       </div>
@@ -514,8 +453,8 @@
             </div>
             <div class="service-card__media">
               <picture>
-                <source type="image/webp" srcset="images/services/B2B-Event-Marketing.webp">
-                <img src="images/services/B2B-Event-Marketing.jpeg" alt="TODO: describe the event marketing photo" width="720" height="480" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit.webp">
+                <img src="images/services/MetaBoost-SBS-Detroit.jpg" alt="MetaBoost Small Business Studios event in Detroit" width="800" height="533" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="service-card__body">
@@ -545,8 +484,8 @@
             </div>
             <div class="service-card__media">
               <picture>
-                <source type="image/webp" srcset="images/services/Content-Thought-Leadership.webp">
-                <img src="images/services/Content-Thought-Leadership.jpg" alt="TODO: describe the content / thought leadership photo" width="720" height="480" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit-Setup.webp">
+                <img src="images/services/MetaBoost-SBS-Detroit-Setup.jpg" alt="Meta Quest headset set-up at MetaBoost Small Business Studios, Detroit" width="800" height="533" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="service-card__body">
@@ -579,8 +518,8 @@
                 <li>Learning &amp; development videos</li>
                 <li>Commercials</li>
               </ul>
-              <a class="service-card__link" href="https://voiceoversbylapope.com/" target="_blank" rel="noopener">
-                Visit the voiceover site
+              <a class="service-card__link" href="https://www.youtube.com/watch?v=0GEJpIToNWU&t=3s" target="_blank" rel="noopener">
+                View Case Study
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -607,27 +546,27 @@
         </p>
       </div>
 
-      <div class="marquee" role="img" aria-label="Logos of agencies L.A. Pope, LLC has collaborated with">
+      <div class="marquee" role="img" aria-label="Logos of agencies L.A. POPE, LLC has collaborated with">
         <ul class="marquee__track">
           <!-- Set 1 -->
-          <li class="marquee__item"><img src="images/agencies/a2e-logo.png" alt="A2E" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/clive-agency-logo.png" alt="Clive Agency" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/cogs-marvel-logo.png" alt="Cogs &amp; Marvel" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/first-logo.png" alt="FIRST" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/factory-360-logo.png" alt="Factory 360" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/imc-logo.png" alt="IMC" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/jack-morton-logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></li>
-          <li class="marquee__item"><img src="images/agencies/obe-logo.png" alt="OBE" loading="lazy" decoding="async"></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/a2e-logo.webp"><img src="images/agencies/a2e-logo.png" alt="A2E" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/clive-agency-logo.webp"><img src="images/agencies/clive-agency-logo.png" alt="Clive Agency" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/cogs-marvel-logo.webp"><img src="images/agencies/cogs-marvel-logo.png" alt="Cogs &amp; Marvel" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/first-logo.webp"><img src="images/agencies/first-logo.png" alt="FIRST" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/factory-360-logo.webp"><img src="images/agencies/factory-360-logo.png" alt="Factory 360" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/imc-logo.webp"><img src="images/agencies/imc-logo.png" alt="IMC" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/jack-morton-logo.webp"><img src="images/agencies/jack-morton-logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/obe-logo.webp"><img src="images/agencies/obe-logo.png" alt="OBE" loading="lazy" decoding="async"></picture></li>
 
           <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/a2e-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/clive-agency-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/cogs-marvel-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/first-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/factory-360-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/imc-logo.png" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/jack-morton-logo.jpeg" alt="" loading="lazy" decoding="async"></li>
-          <li class="marquee__item" aria-hidden="true"><img src="images/agencies/obe-logo.png" alt="" loading="lazy" decoding="async"></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/a2e-logo.webp"><img src="images/agencies/a2e-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/clive-agency-logo.webp"><img src="images/agencies/clive-agency-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/cogs-marvel-logo.webp"><img src="images/agencies/cogs-marvel-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/first-logo.webp"><img src="images/agencies/first-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/factory-360-logo.webp"><img src="images/agencies/factory-360-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/imc-logo.webp"><img src="images/agencies/imc-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/jack-morton-logo.webp"><img src="images/agencies/jack-morton-logo.jpeg" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/obe-logo.webp"><img src="images/agencies/obe-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
         </ul>
       </div>
     </section>
@@ -648,7 +587,7 @@
           </span>
           <picture class="about__img">
             <source type="image/webp" srcset="images/about/about-lori.webp">
-            <img src="images/about/about-lori.jpg" alt="Lori Ann Pope, founder of L.A. Pope, LLC" width="1200" height="667" loading="lazy" decoding="async">
+            <img src="images/about/about-lori.jpg" alt="Lori Ann Pope, founder of L.A. POPE, LLC" width="1200" height="667" loading="lazy" decoding="async">
           </picture>
         </div>
 
@@ -659,14 +598,14 @@
           <p class="about__text">
             Lori Ann Pope has spent 20 years turning rooms full of strangers into
             experiences people actually remember. Colleagues call her L.A., which,
-            fittingly, is also the name behind her company, LAPOPE, LLC. She's an
+            fittingly, is also the name behind her company, L.A. POPE, LLC. She's an
             experiential marketer, producer, and strategist who's just as comfortable
             running a 15,000-person conference and expo, as she is curating an intimate
             room of 100 C-suite executives: She's led the cross-functional teams behind
             both without breaking a sweat.
           </p>
           <p class="about__text">
-            Over nine years, she built Boost, the SMB training and community engagement
+            Over eight years, she built Boost, the SMB training and community engagement
             program at Facebook and Meta, from the ground up. Watching that work ripple
             through local communities around the globe&mdash;seeing economic development
             happen up close&mdash;was some of the most resonant work of her career. Her
@@ -709,7 +648,10 @@
 
           <!-- Photo banner across the top of the card -->
           <figure class="contact__photo">
-            <img src="images/contact/contact-photo.jpeg" alt="Lori Ann Pope on a panel at a Facebook Boost event" width="995" height="246" loading="lazy" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="images/contact/contact-photo.webp">
+              <img src="images/contact/contact-photo.jpeg" alt="Lori Ann Pope on a panel at a Facebook Boost event" width="995" height="246" loading="lazy" decoding="async">
+            </picture>
           </figure>
 
           <!-- Left: contact info -->
@@ -742,7 +684,7 @@
               </span>
               <span class="info-card__meta">
                 <span class="info-card__label">Based In</span>
-                <span class="info-card__value">San Francisco Bay Area</span> <!-- TODO: confirm location -->
+                <span class="info-card__value">SF Bay Area, New York City, Denver</span>
               </span>
             </div>
           </div>
@@ -803,7 +745,7 @@
         </p>
         <ul class="footer__socials">
           <li>
-            <a class="footer__social" href="#" aria-label="L.A. Pope, LLC on LinkedIn">
+            <a class="footer__social" href="#" aria-label="L.A. POPE, LLC on LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
             </a>
           </li>
