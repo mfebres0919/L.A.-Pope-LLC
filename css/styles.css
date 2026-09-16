@@ -245,7 +245,8 @@
   max-width: 44rem; /* the 4-part wordmark + serif statement need a little more room */
   margin-inline: auto;
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
 }
 
 /* The hero statement IS the <h1> — display-scale serif, same size/font as the
