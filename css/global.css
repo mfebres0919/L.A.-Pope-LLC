@@ -135,6 +135,15 @@
   --ink: #14181f;          /* primary text (near-black) */
   --ink-soft: #4a515c;     /* secondary/muted text */
   --line: #e6e8ec;         /* hairline borders */
+
+  /* Acquire Local program palette — straight from that program's own brand
+     guidelines (Documentation/Acquire-Local-Brand-Guidelines.pdf). Scoped to the
+     Current Programs card; the rest of the site stays on the lapope palette. */
+  --al-wine:  #5c1f30;     /* "Acquire", headings, primary ink */
+  --al-slate: #425563;     /* "local" — the wordmark's one accent */
+  --al-gold:  #c69214;     /* divider rule + diamond, awning bars */
+  --al-navy:  #0c2340;     /* tagline */
+  --al-cream: #fbf4e8;     /* warm cream ground */
   --navy: #0f1b2d;         /* dark bar / footer */
   --accent: #2456c9;       /* corporate blue — harmonizes with the event imagery */
   --accent-dark: #1b429b;  /* hover / pressed */

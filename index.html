@@ -128,7 +128,7 @@
 
       <div class="container">
         <div class="hero__inner">
-          <h1 class="hero__title">Translating brand purpose into engaging culturally relevant experiences</h1>
+          <h1 class="hero__title">Translating brand purpose into engaging, culturally relevant experiences</h1>
           <p class="hero__text">
             Your event is your biggest marketing channel &mdash; treat it like one.
             That means a solid strategy and vision, clear key messaging, the right
@@ -166,32 +166,36 @@
         <div class="programs__grid">
           <article class="program-card">
 
-            <!-- Photo banner: image + dark scrim, with the status pill and the
-                 program logo sitting on top of it. -->
+            <!-- Brand panel (was a photo + dark scrim). The Acquire Local mark now
+                 shows in its original wine/slate on the brand's warm cream: the guidelines
+                 allow the white reverse variant only over photos or dark grounds, so
+                 dropping the photo is what lets the logo keep its real colors.
+                 Wordmark is artwork (Playfair Display Black, not a site font); the
+                 tagline is live text in Poppins 500 tracked caps — the exact font and
+                 treatment the guidelines specify, and the site already loads it. -->
             <div class="program-card__media">
-              <picture class="program-card__bg">
-                <source srcset="images/gallery/Attendees-Phones-d.webp" type="image/webp">
-                <img src="images/gallery/Attendees-Phones-d.jpeg"
-                     alt="" aria-hidden="true"
-                     loading="lazy" decoding="async">
-              </picture>
-
               <div class="program-card__media-inner">
                 <p class="program-card__status">In Development</p>
 
                 <div class="program-card__logo">
                   <picture>
-                    <source type="image/webp" srcset="images/programs/acquire-local-wordmark-white.webp">
+                    <source type="image/webp" srcset="images/programs/acquire-local-wordmark.webp">
                     <img class="program-card__logo-mark"
-                         src="images/programs/acquire-local-wordmark-white.png"
-                         alt="Acquire Local" width="1400" height="226"
+                         src="images/programs/acquire-local-wordmark.png"
+                         alt="Acquire Local" width="1826" height="334"
                          loading="lazy" decoding="async">
                   </picture>
-                  <img class="program-card__logo-street"
-                       src="images/programs/acquire-local-storefronts-tagline-white.svg"
-                       alt="Acquire a business. Preserve a legacy. Strengthen a community."
-                       width="745" height="150"
-                       loading="lazy" decoding="async">
+
+                  <!-- Gold rule + diamond, redrawn at the guidelines' proportions. -->
+                  <svg class="program-card__logo-rule" viewBox="0 0 66 4" aria-hidden="true">
+                    <rect x="0" y="1.2" width="66" height="1.6" fill="#c69214"/>
+                    <rect x="31.4" y="0.4" width="3.2" height="3.2" fill="#c69214"
+                          transform="rotate(45 33 2)"/>
+                  </svg>
+
+                  <p class="program-card__logo-tagline">
+                    Acquire a business. Preserve a legacy. Strengthen a community.
+                  </p>
                 </div>
               </div>
             </div>
@@ -204,24 +208,22 @@
                 retirement</strong> without a plan for what comes next.
               </p>
               <p class="program-card__text">
-                Acquire Local brings owners, first-time buyers, employees, advisors,
-                and capital partners into one room to change that.
+                Acquire Local, a small business (SMB) community engagement program,
+                brings SMBs, first-time buyers, employees, advisors, and capital partners
+                into one room to change that.
                 <em>Acquire a business. Preserve a legacy. Strengthen a community.</em>
-                <strong>First stop: Brooklyn.</strong>
+                <strong>First stop this November: Brooklyn.</strong>
               </p>
 
-              <div class="program-card__actions">
-                <!-- Decorative arrow pointing at the CTA — the same hand-drawn mark
-                     used in the About section. Desktop/tablet only (no room beside
-                     the button on phones). -->
-                <span class="program-card__arrow" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g fill="#2456C9"><g><path d="m385.54 271.64-.8.45.8-.45ZM447.89 211.06c-18.76-27.31-44.82-59.56-66.31-83.65a9.18 9.18 0 0 0-5.38-3.7c-10.65-2.09-14.53 7.22-6.33 14.04 18.97 23.31 37.56 47.09 54.62 71.86-27.69-9-80.46-12.81-89.57-14-78.54-5.99-162.26 9.22-223.16 62.1-32.32 27.27-66.02 69.31-65.22 113.55-.02 7.28 17.74 8.59 19.2-5.66 7.56-72.25 95.56-133.37 162.44-146.43 55.03-12.22 112.14-8.65 167.2 1.5 23.18 4.25 22.56 5.37 29.51 7.79-17.27 11.16-35.79 20.45-53.52 30.85-6.49 5.38-28.25 9.44-21.03 20.84 10.16 11.23 24.87-4.35 35.21-8.51a2123.25 2123.25 0 0 0 33.44-19.16c10.18-7.17 31.93-15.13 34.5-27.99.37-5.08-2.96-9.39-5.57-13.44Z"></path></g></g></svg>
-                </span>
-
-                <!-- TODO 1: point href at the signup form / mailing list once it exists.
-                     Eventbrite registration is off the table for now. -->
-                <a class="btn btn--solid btn--arrow" href="#">Sign up for Updates</a>
-              </div>
+              <!-- The storefront row stands where the "Sign up for Updates" button
+                   used to: Dana's email just below is the contact route now, so the
+                   CTA (and the arrow that pointed at it) came out. Cropped from the
+                   brand artwork so the shops still touch with no gaps. -->
+              <img class="program-card__street"
+                   src="images/programs/acquire-local-storefronts.svg"
+                   alt="" aria-hidden="true"
+                   width="600" height="93"
+                   loading="lazy" decoding="async">
 
               <!-- Partner / sponsor contact — replaced the old logo marquee. -->
               <div class="program-card__contact">
@@ -230,7 +232,7 @@
                   resource partners</strong> who want to help carry good businesses
                   forward. If that&rsquo;s you, please contact
                   <strong>Dana Michel</strong> at
-                  <a href="mailto:dana@danakmichel.com">dana@danakmichel.com</a>.
+                  <a href="mailto:dana@acquirelocal.org">dana@acquirelocal.org</a>.
                 </p>
               </div>
             </div>
@@ -453,8 +455,8 @@
             </div>
             <div class="service-card__media">
               <picture>
-                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit.webp">
-                <img src="images/services/MetaBoost-SBS-Detroit.jpg" alt="MetaBoost Small Business Studios event in Detroit" width="800" height="533" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit-Setup.webp">
+                <img src="images/services/MetaBoost-SBS-Detroit-Setup.jpg" alt="Meta Quest headset set-up at MetaBoost Small Business Studios, Detroit" width="800" height="533" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="service-card__body">
@@ -484,8 +486,8 @@
             </div>
             <div class="service-card__media">
               <picture>
-                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit-Setup.webp">
-                <img src="images/services/MetaBoost-SBS-Detroit-Setup.jpg" alt="Meta Quest headset set-up at MetaBoost Small Business Studios, Detroit" width="800" height="533" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="images/services/MetaBoost-SBS-Detroit.webp">
+                <img src="images/services/MetaBoost-SBS-Detroit.jpg" alt="MetaBoost Small Business Studios event in Detroit" width="800" height="533" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="service-card__body">
@@ -505,8 +507,8 @@
             </div>
             <div class="service-card__media">
               <picture>
-                <source type="image/webp" srcset="images/services/Voiceovers.webp">
-                <img src="images/services/Voiceovers.jpg" alt="TODO: describe the voiceover / studio photo" width="720" height="480" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="images/services/we-create-case-study-instagram.webp">
+                <img src="images/services/we-create-case-study-instagram.png" alt="TODO: describe the voiceover / studio photo" width="720" height="480" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="service-card__body">
@@ -518,8 +520,8 @@
                 <li>Learning &amp; development videos</li>
                 <li>Commercials</li>
               </ul>
-              <a class="service-card__link" href="https://www.youtube.com/watch?v=0GEJpIToNWU&t=3s" target="_blank" rel="noopener">
-                View Case Study
+              <a class="service-card__link" href="https://voiceoversbylapope.com/" target="_blank" rel="noopener">
+                Visit the voiceover site
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -557,6 +559,7 @@
           <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/imc-logo.webp"><img src="images/agencies/imc-logo.png" alt="IMC" loading="lazy" decoding="async"></picture></li>
           <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/jack-morton-logo.webp"><img src="images/agencies/jack-morton-logo.jpeg" alt="Jack Morton" loading="lazy" decoding="async"></picture></li>
           <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/obe-logo.webp"><img src="images/agencies/obe-logo.png" alt="OBE" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item"><picture><source type="image/webp" srcset="images/agencies/TAIT-logo.webp"><img src="images/agencies/TAIT-logo.png" alt="TAIT" loading="lazy" decoding="async"></picture></li>
 
           <!-- Set 2 (duplicate for the seamless loop — hidden from screen readers) -->
           <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/a2e-logo.webp"><img src="images/agencies/a2e-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
@@ -567,6 +570,7 @@
           <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/imc-logo.webp"><img src="images/agencies/imc-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
           <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/jack-morton-logo.webp"><img src="images/agencies/jack-morton-logo.jpeg" alt="" loading="lazy" decoding="async"></picture></li>
           <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/obe-logo.webp"><img src="images/agencies/obe-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
+          <li class="marquee__item" aria-hidden="true"><picture><source type="image/webp" srcset="images/agencies/TAIT-logo.webp"><img src="images/agencies/TAIT-logo.png" alt="" loading="lazy" decoding="async"></picture></li>
         </ul>
       </div>
     </section>

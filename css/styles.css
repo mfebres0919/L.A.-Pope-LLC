@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0; /* flush at the very top; gains the floating gap once scrolled */
+  padding: 0; /* flush at the very top; gains th©e floating gap once scrolled */
   background: transparent;
   transition: padding 0.3s ease;
 }
@@ -245,6 +245,7 @@
   max-width: 44rem; /* the 4-part wordmark + serif statement need a little more room */
   margin-inline: auto;
   text-align: center;
+  padding-top: 3rem;
 }
 
 /* The hero statement IS the <h1> — display-scale serif, same size/font as the
@@ -392,83 +393,79 @@
   text-align: center;
 }
 
-/* --- Photo banner ------------------------------------------------------- */
+/* --- Brand panel (was a photo banner) -----------------------------------
+   The Acquire Local guidelines allow the white reverse mark only over photos or
+   dark grounds, and forbid re-coloring, drop shadows and outlines. So the photo
+   and its scrim are gone and the mark sits in its real colors on brand cream —
+   which is also why there's no drop-shadow on the logo any more. */
 .program-card__media {
-  position: relative;
-  isolation: isolate;            /* keeps the scrim under the text, above the img */
   display: grid;
-  place-items: center;           /* lockup sits dead centre of the photo */
-  min-height: 21rem;             /* gives the banner room to centre INTO */
+  place-items: center;           /* lockup sits dead centre of the panel */
+  min-height: 21rem;
   padding: 3rem 1.5rem;
   text-align: center;
-}
-.program-card__bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-.program-card__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;   /* bias to faces, not floor */
-}
-/* Scrim — dark enough that white type clears WCAG AA over any part of the photo */
-.program-card__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg,
-    rgba(15, 27, 45, 0.72) 0%,
-    rgba(15, 27, 45, 0.62) 55%,
-    rgba(15, 27, 45, 0.78) 100%
-  );
+  background-color: var(--al-cream);
+  border-bottom: 1px solid rgba(92, 31, 48, 0.12);
 }
 .program-card__media-inner {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--white);
 }
 
 /* Status pill — "In Development", "Registration Open", "Sold Out" …
-   Translucent white on the photo rather than the pale blue chip. */
+   Wine on cream now that the panel is light rather than a dark photo. */
 .program-card__status {
   display: inline-block;
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-pill);
-  background-color: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--white);
+  background-color: rgba(92, 31, 48, 0.07);
+  border: 1px solid rgba(92, 31, 48, 0.32);
+  color: var(--al-wine);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Logo slot — the all-white Acquire Local lockup: wordmark stacked over the
-   storefront row + tagline. Both pieces are wide, so they're sized by width;
-   the shared drop-shadow lifts them off the photo underneath. */
+/* Logo slot — wordmark over the gold rule over the tagline. This is the
+   guidelines' sanctioned "wordmark + tagline" lockup; the storefront row lives
+   further down the card, where the CTA used to be. */
 .program-card__logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
-  margin-top: 1.5rem;
-  filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.5));
+  margin-top: 1.75rem;
+  width: 100%;
 }
-.program-card__logo img {
+/* Wordmark stays artwork — it's Playfair Display Black, which the site doesn't
+   load. Sized by width; the art is transparent, so it takes the cream ground. */
+.program-card__logo-mark {
   display: block;
   width: 100%;
   height: auto;
+  max-width: 30rem;
 }
-/* The storefront SVG carries ~20% side padding inside its viewBox, so the two
-   widths differ on paper to make the ARTWORK line up, the way it does in the
-   official cream-background lockup. */
-.program-card__logo-mark   { max-width: 26rem; }
-.program-card__logo-street { max-width: 32rem; }
+.program-card__logo-rule {
+  width: 4.125rem;   /* 66 units at the tagline's scale */
+  height: 0.25rem;
+  margin-top: 1.1rem;
+  overflow: visible;
+}
+/* Tagline as live text, not artwork: Poppins 500 tracked caps in navy is exactly
+   what the guidelines call for, the site already loads Poppins, and real text
+   stays crisp and wraps on a phone instead of shrinking to an illegible strip. */
+.program-card__logo-tagline {
+  margin-top: 0.9rem;
+  max-width: 40rem;      /* wide enough to hold one line at desktop */
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(0.62rem, 1.9vw, 0.88rem);
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--al-navy);
+}
 
 /* --- Body --------------------------------------------------------------- */
 .program-card__body { padding: 2rem 1.5rem; }
@@ -485,21 +482,16 @@
   font-style: italic;
   color: var(--ink);
 }
-.program-card__actions {
-  position: relative; /* anchor for the decorative arrow */
-  margin-top: 1.75rem;
-}
-
-/* Decorative arrow pointing at the CTA — same mark + bounce as the About
-   section. Hidden on phones, where there's no room beside the button. */
-.program-card__arrow {
-  display: none;
-  animation: arrow-bounce 4s ease-in-out infinite;
-}
-.program-card__arrow svg {
-  width: 100%;
-  height: auto;
+/* Storefront row — stands where the "Sign up for Updates" button used to.
+   Capped and centred rather than bled across the card so the shops stay at a
+   sensible scale; the crop keeps them touching, per "one streetscape, not
+   separate icons". */
+.program-card__street {
   display: block;
+  width: 100%;
+  max-width: 38rem;
+  height: auto;
+  margin: 2.25rem auto 0;
 }
 
 /* Partner + sponsor contact — sits under the CTA, replacing the old logo
@@ -532,20 +524,6 @@
 @media (min-width: 48em) {
   .program-card__media { min-height: 26rem; padding: 4rem 2.5rem; }
   .program-card__body  { padding: 2.5rem; }
-
-  /* Arrow sits just left of the centred button, arcing over to point at it.
-     Offsets are measured from the centre line so it tracks the button
-     regardless of how wide the card gets. */
-  .program-card__arrow {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: -18px;
-    left: 50%;
-    margin-left: -250px;
-    width: 120px;
-    pointer-events: none;
-  }
 }
 
 @media (min-width: 64em) {
@@ -914,6 +892,51 @@
 }
 .service-card:hover .service-card__media img { transform: scale(1.08); }
 
+/* Case-study video overlay (Voiceovers card) — turns the media box into a play
+   surface. Sits above .service-card__media::after so the gradient tints only the
+   photo. The title is always visible; only the play button reacts to hover. */
+.service-card__video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--white);
+}
+.service-card__video-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background-color: rgba(255, 255, 255, 0.18);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.service-card__video-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--white);
+  margin-left: 3px; /* optically center the triangle */
+}
+.service-card__video:hover .service-card__video-icon,
+.service-card__video:focus-visible .service-card__video-icon {
+  background-color: var(--accent);
+  transform: scale(1.08);
+}
+.service-card__video-title {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
 /* Body */
 .service-card__body {
   padding: 1.75rem 1.5rem 2rem;
@@ -1171,7 +1194,7 @@
   display: block;
 }
 
-/* Shared by .about__arrow and .program-card__arrow */
+/* Used by .about__arrow */
 @keyframes arrow-bounce {
   0%   { transform: translateY(0); }
   6%   { transform: translateY(-14px); }
@@ -1181,8 +1204,7 @@
   100% { transform: translateY(0); } /* the ~3s pause */
 }
 @media (prefers-reduced-motion: reduce) {
-  .about__arrow,
-  .program-card__arrow { animation: none; }
+  .about__arrow { animation: none; }
 }
 .about__img img {
   width: 100%;
